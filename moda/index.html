@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Mari Paiva · Proposta de moda">
+<meta property="og:description" content="Moda que se vende no provador ao vivo.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mari Paiva">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://www.soumaripaiva.com.br/moda/">
+<meta property="og:image" content="https://www.soumaripaiva.com.br/og-moda.jpg">
+<meta property="og:image:secure_url" content="https://www.soumaripaiva.com.br/og-moda.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#E0117A">
+<title>Mari Paiva · Moda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: proposta por categoria, sem nome de marca. Capa com a tese da categoria, prova com números reais da categoria, ideias, roteiro do vídeo 1 e como funciona. */
+:root{
+  --paper:#FBF2F6; --ink:#24101C; --muted:#6F5866; --line:#EAD6DF; --card:#FFFFFF;
+  --pink:#E0117A; --soft:#F8DCEA; --night:#1B0B15; --night-2:#2B1522; --night-ink:#FCEFF5; --night-muted:#D4B8C8; --hot:#FF5BA8;
+  --hero-bg:#E0117A; --hero-accent:#1B0B15; --hero-btn:#1B0B15;
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#160A11; --ink:#F8EAF1; --muted:#BFA1B1; --line:#3A2230; --card:#21111A; --pink:#F0218A; --soft:#3A1428; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#160A11; --ink:#F8EAF1; --muted:#BFA1B1; --line:#3A2230; --card:#21111A; --pink:#F0218A; --soft:#3A1428; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:20px}
+.num{font-variant-numeric:tabular-nums}
+section{padding-block:clamp(56px,9vw,104px)}
+.chap{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.chap b{font-family:var(--display);font-weight:900;font-size:.95rem;color:var(--pink)}
+.chap span{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.h2{font-size:clamp(1.9rem,4.6vw,3.3rem);font-weight:700;max-width:22ch}
+.lead{color:var(--muted);font-size:1.1rem;max-width:62ch;margin-top:16px}
+
+/* HERO */
+.hero{background:var(--hero-bg);color:#fff;overflow:hidden}
+.topbar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding-top:22px;opacity:.9}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(20px,4vw,48px);align-items:end;padding-top:clamp(30px,5vw,56px)}
+.hero-copy{display:grid;gap:22px;padding-bottom:clamp(40px,6vw,72px);min-width:0}
+.cat-chip{justify-self:start;font-family:var(--mono);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:999px;border:1.5px solid currentColor}
+.pair{font-family:var(--display);font-weight:900;font-size:clamp(2.4rem,6.8vw,5rem);line-height:.94;letter-spacing:-.03em}
+.pair .x{color:var(--hero-accent)}
+.thesis{font-family:var(--display);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.8rem);line-height:1.2;max-width:24ch}
+.thesis b{font-weight:900;color:var(--hero-accent)}
+.hero-note{font-size:1.06rem;max-width:48ch;opacity:.92}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;padding:13px 20px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .15s ease;border:2px solid transparent}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.btn.main{background:var(--hero-btn);color:#fff}
+.btn.line{border-color:#fff;color:#fff}
+.hero-photo{position:relative;align-self:stretch;min-height:420px}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;border-radius:220px 220px 0 0;display:block}
+.badge{position:absolute;left:-18px;top:5%;background:var(--hero-btn);color:#fff;border-radius:999px;width:146px;height:146px;display:grid;place-items:center;text-align:center;font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;line-height:1.3;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.badge strong{display:block;font-family:var(--display);font-size:1.25rem;letter-spacing:-.02em;line-height:1.05;white-space:nowrap}
+
+/* PROVA */
+.proof{background:var(--soft)}
+.proof-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(26px,4vw,40px)}
+.pf{background:var(--card);border-radius:18px;padding:22px 20px;display:grid;gap:6px;align-content:start}
+.pf strong{white-space:nowrap;font-family:var(--display);font-weight:900;font-size:clamp(1.3rem,2.3vw,1.75rem);line-height:1;color:var(--pink)}
+.pf span{font-size:.93rem;color:var(--muted);line-height:1.35}
+.proof-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(22px,4vw,44px);margin-top:clamp(28px,4vw,40px);align-items:start}
+.panel-title{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.tops{display:grid;border-top:2px solid var(--ink)}
+.top{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:baseline;padding-block:13px;border-bottom:1px solid var(--line)}
+.top .rk{font-family:var(--display);font-weight:900;color:var(--pink);font-size:1.05rem;width:1.5em}
+.top .nm{font-weight:600;line-height:1.3}
+.top .un{font-family:var(--display);font-weight:700;font-size:1.1rem;text-align:right;white-space:nowrap}
+.top .un small{display:block;font-family:var(--mono);font-weight:400;font-size:.7rem;color:var(--muted)}
+.spot{background:var(--night);color:var(--night-ink);border-radius:22px;padding:clamp(22px,3vw,30px);display:grid;gap:12px}
+.spot .lbl{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--hot)}
+.spot strong{font-family:var(--display);font-weight:900;font-size:clamp(2rem,5vw,3.2rem);line-height:1;white-space:nowrap}
+.spot p{color:var(--night-muted)}
+.note{color:var(--muted);font-size:.85rem;margin-top:12px}
+
+/* O QUE FUNCIONA */
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(28px,4vw,44px)}
+.why-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 22px;display:grid;gap:10px;align-content:start}
+.why-card .n{font-family:var(--display);font-weight:900;color:var(--pink);font-size:1rem}
+.why-card h3{font-family:var(--body);font-size:1.15rem;font-weight:700;line-height:1.3}
+.why-card p{color:var(--muted);font-size:.97rem}
+
+/* IDEIAS */
+.ideas{display:grid;gap:14px;margin-top:clamp(28px,4vw,44px)}
+.idea{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,.9fr);gap:clamp(16px,3vw,32px);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(20px,3vw,28px);align-items:start}
+.idea .fmt{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;background:var(--pink);color:#fff;padding:6px 10px;border-radius:6px;white-space:nowrap}
+.idea h3{font-size:clamp(1.15rem,2.3vw,1.45rem);font-weight:700;margin-bottom:8px}
+.idea .hook{font-style:italic}
+.idea .how{color:var(--muted);font-size:.96rem}
+
+/* ROTEIRO */
+.script{background:var(--night);color:var(--night-ink)}
+.script .chap span,.script .lead{color:var(--night-muted)}
+.script-grid{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);gap:clamp(22px,4vw,48px);margin-top:clamp(28px,4vw,44px);align-items:start}
+.phone{border:3px solid var(--night-muted);border-radius:34px;aspect-ratio:9/16;max-width:300px;width:100%;padding:16px;display:grid;align-content:space-between;background:linear-gradient(180deg,#3A1A2C,#1B0B15);position:relative;overflow:hidden}
+.phone .cap{font-family:var(--display);font-weight:700;font-size:1.12rem;line-height:1.2;text-align:center;margin-top:30%}
+.phone .cap b{background:#fff;color:var(--night);padding:2px 6px;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.phone .meta{display:grid;gap:4px;font-size:.82rem}
+.phone .meta b{font-size:.92rem}
+.phone .cart{display:inline-flex;gap:6px;align-items:center;background:var(--pink);border-radius:8px;padding:6px 10px;font-weight:700;font-size:.8rem;justify-self:start}
+.phone .len{position:absolute;top:14px;right:16px;font-family:var(--mono);font-size:.72rem;color:var(--night-muted)}
+.beats{display:grid;border-top:1px solid #4A2A3B}
+.beat{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;padding-block:16px;border-bottom:1px solid #4A2A3B}
+.beat .t{font-family:var(--mono);font-size:.86rem;color:var(--hot);padding-top:3px}
+.beat .t small{display:block;color:var(--night-muted);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.beat b{display:block;font-size:1.05rem;margin-bottom:4px}
+.beat q{display:block;font-style:italic;quotes:"“" "”"}
+.beat .scene{font-size:.92rem;color:var(--night-muted);margin-top:4px}
+.script-note{font-size:.85rem;color:var(--night-muted);margin-top:14px}
+
+/* COMO FUNCIONA */
+.how-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(22px,4vw,48px);margin-top:clamp(28px,4vw,44px);align-items:start}
+.steps{display:grid;border-top:2px solid var(--ink)}
+.step{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;padding-block:16px;border-bottom:1px solid var(--line)}
+.step .n{font-family:var(--display);font-weight:900;color:var(--pink);font-size:1.2rem;width:1.4em}
+.step b{display:block;font-size:1.05rem}
+.step span{color:var(--muted);font-size:.95rem}
+.sheet{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;font-family:var(--mono);font-size:.86rem;box-shadow:0 18px 40px -26px rgba(36,16,28,.5)}
+.sheet .sh{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-bottom:12px;border-bottom:1.5px dashed var(--muted);margin-bottom:6px}
+.sheet .sh b{font-size:.95rem}
+.sheet .row{display:flex;gap:8px;align-items:baseline;padding-block:7px}
+.sheet .row .d{flex:1;border-bottom:1.5px dotted var(--muted);transform:translateY(-4px);min-width:10px}
+.sheet .row .v{color:var(--pink);font-weight:600;white-space:nowrap}
+.sheet .foot{margin-top:10px;color:var(--muted);font-size:.76rem}
+
+/* CTA */
+.close{background:var(--hero-bg);color:#fff}
+.close-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,4vw,48px);align-items:center}
+.close h2{font-size:clamp(2rem,5.4vw,4rem);font-weight:900;letter-spacing:-.02em}
+.close h2 em{font-style:normal;color:var(--hero-accent)}
+.close p{font-size:1.1rem;margin-top:14px;max-width:46ch;opacity:.92}
+.contact-list{display:grid;gap:12px}
+.cl{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fff;color:#24101C;border-radius:16px;padding:16px 18px;text-decoration:none;font-weight:700;flex-wrap:wrap;transition:transform .15s ease}
+.cl:hover{transform:translateX(4px)}
+.cl:focus-visible{outline:3px solid var(--hero-accent);outline-offset:3px}
+.cl small{display:block;font-family:var(--mono);font-weight:400;font-size:.75rem;color:#7A5F6E;letter-spacing:.06em;text-transform:uppercase}
+footer{padding-block:28px;color:var(--muted);font-size:.8rem;line-height:1.6}
+
+@media (max-width:900px){
+  .hero-grid,.proof-split,.script-grid,.how-grid,.close-grid{grid-template-columns:minmax(0,1fr)}
+  .hero-photo{align-self:start;min-height:0;height:clamp(320px,108vw,430px);width:100%;order:-1;margin-top:8px}
+  .proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .why{grid-template-columns:minmax(0,1fr)}
+  .idea{grid-template-columns:minmax(0,1fr)}
+  .phone{max-width:240px;justify-self:center}
+}
+@media (max-width:560px){
+  .beat{grid-template-columns:minmax(0,1fr);gap:4px}
+  .badge{width:128px;height:128px;left:10px;right:auto;top:4%;font-size:.62rem}
+  .badge strong{font-size:1.05rem}
+}
+@media (max-width:420px){.sheet{padding:18px 14px;font-size:.78rem}.proof-grid{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.btn,.cl{transition:none}}
+</style>
+<style>html,body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar"><span>Proposta de parceria</span><span>Mari Paiva · @soumaripaiva</span></div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="cat-chip">Moda</span>
+        <h1 class="pair">Mari <span class="x">&amp;</span><br>a sua marca</h1>
+        <p class="thesis">Moda que se vende <b>no provador ao vivo.</b></p>
+        <p class="hero-note">Bolsa, tênis, calça: em moda, a Mari vende mais quando o público vê a peça no corpo, ao vivo, e pode perguntar tudo antes de comprar.</p>
+        <div class="hero-cta">
+          <a class="btn main" href="https://wa.me/5531996293489?text=Ol%C3%A1%2C%20Mari%21%20Vi%20a%20sua%20proposta%20de%20moda%20e%20quero%20conversar." target="_blank" rel="noopener">Conversar com a Mari</a>
+          <a class="btn line" href="#roteiro">Ver o roteiro do vídeo 1</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="../capa.jpg" alt="Mari Paiva sentada no sofá, de calça jeans, blusa preta e tênis, em frente à parede rosa">
+        <div class="badge" aria-label="R$ 183 mil vendidos em moda no TikTok Shop"><span><strong>R$ 183 mil</strong>em moda<br>no TikTok Shop</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="proof">
+    <div class="wrap">
+      <div class="chap"><b>01</b><span>Resultados em moda</span></div>
+      <h2 class="h2">Em moda, a live é a vitrine.</h2>
+      <p class="lead">Números reais da Mari na categoria, tirados do relatório de vendas do TikTok Shop.</p>
+      <div class="proof-grid"><div class="pf"><strong class="num">R$ 183 mil</strong><span>vendidos em moda, bolsas e calçados</span></div><div class="pf"><strong class="num">4.443</strong><span>itens de moda vendidos</span></div><div class="pf"><strong class="num">67%</strong><span>das vendas de moda vieram de live</span></div><div class="pf"><strong class="num">2.964</strong><span>malas personalizadas vendidas (2 modelos)</span></div></div>
+      <div class="proof-split">
+        <div>
+          <p class="panel-title">Campeões de venda em moda</p>
+          <div class="tops"><div class="top"><span class="rk">1</span><span class="nm">Mala personalizada floral</span><span class="un num">2.582<small>unidades</small></span></div><div class="top"><span class="rk">2</span><span class="nm">Bolsa térmica expansível</span><span class="un num">440<small>unidades</small></span></div><div class="top"><span class="rk">3</span><span class="nm">Mala grande personalizada</span><span class="un num">382<small>unidades</small></span></div><div class="top"><span class="rk">4</span><span class="nm">Calça pantalona feminina</span><span class="un num">296<small>unidades</small></span></div><div class="top"><span class="rk">5</span><span class="nm">Tênis feminino chunky</span><span class="un num">126<small>unidades</small></span></div></div>
+        </div>
+        <div class="spot">
+          <span class="lbl">Um vídeo, um resultado</span>
+          <strong class="num">R$ 122 mil</strong>
+          <p>vendidos em moda durante as lives da Mari. O público vê caimento, cor e tamanho ao vivo, pergunta e compra na hora.</p>
+        </div>
+      </div>
+      <p class="note">Categorias agrupadas pelo nome de cada produto vendido.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="chap"><b>02</b><span>O que funciona</span></div>
+      <h2 class="h2">Por que moda vende na mão da Mari</h2>
+      <div class="why"><div class="why-card"><span class="n">01</span><h3>A peça no corpo, ao vivo</h3><p>Caimento, tecido e tamanho aparecem de verdade. É o provador que a loja online não tem.</p></div><div class="why-card"><span class="n">02</span><h3>Personalização vira desejo</h3><p>A mala com a inicial do nome foi o produto mais vendido de toda a trajetória da Mari: 2.582 unidades.</p></div><div class="why-card"><span class="n">03</span><h3>Conforto convence</h3><p>Tênis e calça vendem quando a Mari mostra a peça na rotina: trabalho, passeio, família.</p></div></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="chap"><b>03</b><span>Ideias prontas</span></div>
+      <h2 class="h2">Três formatos para o seu produto</h2>
+      <div class="ideas"><article class="idea"><span class="fmt">Live</span><div><h3>Provador ao vivo</h3><p class="hook">Veste, mostra o caimento e responde tamanho por tamanho.</p></div><p class="how">O formato que mais vende moda no perfil da Mari, com a peça no carrinho durante a live.</p></article><article class="idea"><span class="fmt">Vídeo</span><div><h3>Uma peça, três looks</h3><p class="hook">“Comprei uma peça só e montei a semana inteira.”</p></div><p class="how">A mesma peça em três ocasiões reais, mostrando que ela vale o preço.</p></article><article class="idea"><span class="fmt">Série</span><div><h3>Na rotina de verdade</h3><p class="hook">Do trabalho ao fim de semana com a família.</p></div><p class="how">A peça acompanhando a Mari no dia a dia, sem cenário montado.</p></article></div>
+    </div>
+  </section>
+
+  <section class="script" id="roteiro">
+    <div class="wrap">
+      <div class="chap"><b>04</b><span>Roteiro do vídeo 1</span></div>
+      <h2 class="h2">Uma peça, três looks</h2>
+      <p class="lead">Antes de fechar, a sua marca já vê o que vai ao ar. Um vídeo de 45 segundos, segundo a segundo.</p>
+      <div class="script-grid">
+        <div class="phone" aria-hidden="true">
+          <span class="len">0:45</span>
+          <p class="cap"><b>Uma peça, três looks</b></p>
+          <div class="meta"><b>@soumaripaiva</b><span>Uma peça só, a semana inteira 👗</span><span class="cart">🛒 Produto no link</span></div>
+        </div>
+        <div>
+          <div class="beats"><div class="beat"><span class="t">0:00–0:03<small>Gancho</small></span><div><b>A Mari segura a peça na frente da câmera</b><q>Comprei uma peça só e montei a semana inteira.</q><p class="scene">Texto grande na tela. Sem vinheta, sem logo.</p></div></div><div class="beat"><span class="t">0:03–0:15<small>Look 1</small></span><div><b>Para o trabalho</b><q>Segunda-feira, reunião: assim.</q><p class="scene">Transição rápida com a peça vestida, mostrando o caimento.</p></div></div><div class="beat"><span class="t">0:15–0:27<small>Look 2</small></span><div><b>Para o passeio</b><q>Passeio com a família: troquei só o tênis.</q><p class="scene">A mesma peça em outra combinação, em ambiente real.</p></div></div><div class="beat"><span class="t">0:27–0:38<small>Look 3</small></span><div><b>Para o fim de semana</b><q>E no sábado ela ainda vira isso.</q><p class="scene">O look mais surpreendente fica por último.</p></div></div><div class="beat"><span class="t">0:38–0:45<small>Fecho</small></span><div><b>Tamanhos e cores</b><q>Tem em várias cores, tá no carrinho.</q><p class="scene">Close no detalhe da peça e link do TikTok Shop.</p></div></div></div>
+          <p class="script-note">Roteiro de referência. A versão final é ajustada com a marca, conforme o produto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="chap"><b>05</b><span>Como funciona</span></div>
+      <h2 class="h2">Da amostra ao relatório</h2>
+      <div class="how-grid">
+        <div class="steps">
+          <div class="step"><span class="n">1</span><div><b>A marca envia a amostra</b><span>A Mari recebe o produto e combina o formato com a marca.</span></div></div>
+          <div class="step"><span class="n">2</span><div><b>A Mari testa de verdade</b><span>O produto entra na rotina dela antes de qualquer gravação.</span></div></div>
+          <div class="step"><span class="n">3</span><div><b>Vídeo e live com link</b><span>Conteúdo com o produto no carrinho do TikTok Shop, ou com o link que a marca indicar.</span></div></div>
+          <div class="step"><span class="n">4</span><div><b>Relatório com prints</b><span>Resultado direto das plataformas, para a marca decidir os próximos passos.</span></div></div>
+        </div>
+        <div class="sheet" aria-label="Modelo de relatório">
+          <div class="sh"><b>RELATÓRIO DA PARCERIA</b><span>modelo</span></div>
+          <div class="row"><span>Visualizações</span><span class="d"></span><span class="v">TikTok + Instagram</span></div>
+          <div class="row"><span>Pessoas alcançadas</span><span class="d"></span><span class="v">por vídeo</span></div>
+          <div class="row"><span>Retenção média</span><span class="d"></span><span class="v">% assistido</span></div>
+          <div class="row"><span>Cliques no link</span><span class="d"></span><span class="v">por produto</span></div>
+          <div class="row"><span>Vendas</span><span class="d"></span><span class="v">quando houver link</span></div>
+          <div class="row"><span>Comentários de compra</span><span class="d"></span><span class="v">"onde compra?"</span></div>
+          <p class="foot">Com prints originais das plataformas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap close-grid">
+      <div>
+        <h2>Vamos colocar a sua peça <em>no provador da Mari?</em></h2>
+        <p>Valores e prazos são combinados na conversa, conforme o produto e o formato escolhido.</p>
+      </div>
+      <div class="contact-list">
+        <a class="cl" href="https://wa.me/5531996293489?text=Ol%C3%A1%2C%20Mari%21%20Vi%20a%20sua%20proposta%20de%20moda%20e%20quero%20conversar." target="_blank" rel="noopener"><span><small>WhatsApp</small>(31) 99629-3489</span><span aria-hidden="true">→</span></a>
+        <a class="cl" href="https://www.soumaripaiva.com.br/midiakit/" target="_blank" rel="noopener"><span><small>Mídia kit completo</small>www.soumaripaiva.com.br</span><span aria-hidden="true">→</span></a>
+        <a class="cl" href="https://www.tiktok.com/@soumaripaiva" target="_blank" rel="noopener"><span><small>TikTok e Instagram</small>@soumaripaiva</span><span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">Dados de vendas: relatório de pedidos de afiliado do TikTok Shop (jun/2025 a out/2026), só pedidos válidos. Categorias agrupadas pelo nome dos produtos vendidos.</div></footer>
+
+</body>
+</html>
