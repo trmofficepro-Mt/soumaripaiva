@@ -66,7 +66,7 @@ section{padding-block:clamp(56px,9vw,104px)}
 .btn.line{border-color:#fff;color:#fff}
 .hero-photo{position:relative;align-self:stretch;min-height:420px}
 .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;border-radius:220px 220px 0 0;display:block}
-.badge{position:absolute;left:-14px;bottom:28px;background:var(--night);color:#fff;border-radius:999px;width:120px;height:120px;display:grid;place-items:center;text-align:center;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;line-height:1.3;transform:rotate(-8deg);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.badge{position:absolute;left:-18px;top:38%;background:var(--night);color:#fff;border-radius:999px;width:124px;height:124px;display:grid;place-items:center;text-align:center;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;line-height:1.3;box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .badge strong{display:block;font-family:var(--display);font-size:1.7rem;letter-spacing:-.02em;line-height:1;color:var(--hot)}
 
 /* INSIGHT */
@@ -198,8 +198,9 @@ footer{padding-block:28px;color:var(--muted);font-size:.8rem;line-height:1.6}
 @media (max-width:560px){
   .beat{grid-template-columns:minmax(0,1fr);gap:4px}
   .plan{grid-template-rows:repeat(4,minmax(86px,auto))}
-  .badge{width:100px;height:100px;left:6px}
+  .badge{width:108px;height:108px;left:10px;font-size:.66rem}
 }
+@media (max-width:420px){.sheet{padding:18px 14px;font-size:.78rem}}
 @media (prefers-reduced-motion:reduce){.btn,.cl,.room{transition:none}}
 .print-all .plan-wrap{display:none}
 .print-all .allrooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:clamp(28px,4vw,44px)}
@@ -225,7 +226,7 @@ footer{padding-block:28px;color:var(--muted);font-size:.8rem;line-height:1.6}
       </div>
       <div class="hero-photo">
         <img src="../capa.jpg" alt="Mari Paiva sorrindo no sofá, em frente à parede rosa do escritório do TikTok">
-        <div class="badge" aria-label="Linha 2026 da Midea: 70 produtos"><span><strong>70</strong>lançamentos<br>Midea para<br>a casa em 2026</span></div>
+        <div class="badge" aria-label="Linha 2026 da Midea: 70 produtos"><span><strong>70</strong>lançamentos<br>em 2026</span></div>
       </div>
     </div>
   </div>
