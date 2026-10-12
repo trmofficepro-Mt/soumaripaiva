@@ -230,12 +230,41 @@ footer .wrap{display:grid;gap:6px}
   .marquee-track{animation:none}
   .btn,.cl{transition:none}
 }
+
+/* MENU */
+.site-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:#1B0B15;color:#FCEFF5;border-bottom:1px solid #3A2230}
+.site-nav .nav-in{max-width:1100px;margin:0 auto;padding-inline:20px;display:flex;align-items:center;gap:14px;min-height:58px}
+.site-nav .nav-brand{font-family:"Unbounded","Arial Black",system-ui,sans-serif;font-weight:900;font-size:.98rem;text-decoration:none;white-space:nowrap;color:#FCEFF5}
+.site-nav .nav-brand span{color:#FF5BA8}
+.site-nav .links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;padding-block:8px}
+.site-nav .links::-webkit-scrollbar{display:none}
+.site-nav .links a{padding:7px 13px;border-radius:999px;font-family:"Instrument Sans","Segoe UI",system-ui,sans-serif;font-size:.9rem;font-weight:600;text-decoration:none;white-space:nowrap;color:#D4B8C8;transition:background .15s ease,color .15s ease}
+.site-nav .links a:hover{background:#2B1522;color:#fff}
+.site-nav .links a[aria-current="page"]{background:#E0117A;color:#fff}
+.site-nav a:focus-visible{outline:3px solid #FF5BA8;outline-offset:2px}
+.site-nav .cta{padding:8px 14px;border-radius:999px;background:#E0117A;color:#fff;font-family:"Instrument Sans","Segoe UI",system-ui,sans-serif;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap}
+@media (max-width:640px){.site-nav{position:static}.site-nav .cta{display:none}.site-nav .nav-in{flex-wrap:wrap;justify-content:center;gap:4px;padding-block:10px}.site-nav .nav-brand{width:100%;text-align:center;font-size:.92rem;padding-bottom:4px}.site-nav .links{flex:0 1 auto;flex-wrap:wrap;justify-content:center;overflow:visible;padding-block:0}.site-nav .links a{padding:6px 11px;font-size:.86rem}}
+
+/* CATEGORIAS */
+.cats-sec{padding-top:0}
+.cat-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.cat-card{display:grid;gap:8px;align-content:start;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 22px;text-decoration:none;color:var(--ink);transition:transform .15s ease,border-color .15s ease}
+.cat-card:hover{transform:translateY(-3px);border-color:var(--pink)}
+.cat-card:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.cat-card .cc-name{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cat-card strong{font-family:var(--display);font-weight:900;font-size:clamp(1.4rem,2.4vw,1.8rem);color:var(--pink);white-space:nowrap;line-height:1.05}
+.cat-card .cc-sub{font-size:.95rem;color:var(--muted);line-height:1.35}
+.cat-card .cc-go{font-weight:700;margin-top:8px}
+@media (max-width:900px){.cat-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.cat-cards{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.cat-card{transition:none}}
 </style>
 <style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
 
 
+<nav class="site-nav" aria-label="Menu do site"><div class="nav-in"><a class="nav-brand" href="https://www.soumaripaiva.com.br/midiakit/">Mari <span>Paiva</span></a><div class="links"><a href="https://www.soumaripaiva.com.br/midiakit/" aria-current="page">Mídia kit</a><a href="https://www.soumaripaiva.com.br/tecnologia/">Tecnologia</a><a href="https://www.soumaripaiva.com.br/moda/">Moda</a><a href="https://www.soumaripaiva.com.br/beleza/">Beleza</a><a href="https://www.soumaripaiva.com.br/casa/">Casa</a></div><a class="cta" href="https://wa.me/5531996293489?text=Ol%C3%A1%2C%20Mari!%20Vi%20seu%20site%20e%20quero%20conversar%20sobre%20uma%20parceria." target="_blank" rel="noopener">WhatsApp</a></div></nav>
 <header class="hero">
   <div class="wrap">
     <div class="topbar"><span>Mídia Kit</span><span>TikTok Shop · TikTok · Instagram</span></div>
@@ -456,6 +485,17 @@ footer .wrap{display:grid;gap:6px}
     </div>
   </section>
 
+
+  <section class="cats-sec" id="categorias">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Propostas por categoria</span>
+        <h2>Escolha o seu segmento</h2>
+        <p>Para cada categoria, uma proposta com os resultados reais da Mari naquele tipo de produto, ideias prontas e o roteiro do primeiro vídeo.</p>
+      </div>
+      <div class="cat-cards"><a class="cat-card" href="https://www.soumaripaiva.com.br/tecnologia/"><span class="cc-name">Tecnologia</span><strong class="num">R$ 767 mil</strong><span class="cc-sub">vendidos em smartwatch, fone, carregador</span><span class="cc-go">Ver proposta <span aria-hidden="true">→</span></span></a><a class="cat-card" href="https://www.soumaripaiva.com.br/moda/"><span class="cc-name">Moda</span><strong class="num">R$ 183 mil</strong><span class="cc-sub">vendidos em bolsas, roupas e calçados</span><span class="cc-go">Ver proposta <span aria-hidden="true">→</span></span></a><a class="cat-card" href="https://www.soumaripaiva.com.br/beleza/"><span class="cc-name">Beleza</span><strong class="num">R$ 174 mil</strong><span class="cc-sub">vendidos em cabelo, perfumaria e cuidados</span><span class="cc-go">Ver proposta <span aria-hidden="true">→</span></span></a><a class="cat-card" href="https://www.soumaripaiva.com.br/casa/"><span class="cc-name">Casa</span><strong class="num">R$ 82 mil</strong><span class="cc-sub">vendidos em utilidades para a casa</span><span class="cc-go">Ver proposta <span aria-hidden="true">→</span></span></a></div>
+    </div>
+  </section>
   <section class="contact" id="contato">
     <div class="wrap contact-grid">
       <div>
