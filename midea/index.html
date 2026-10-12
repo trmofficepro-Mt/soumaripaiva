@@ -188,7 +188,7 @@ footer{padding-block:28px;color:var(--muted);font-size:.8rem;line-height:1.6}
 
 @media (max-width:900px){
   .hero-grid,.plan-wrap,.script-grid,.report-grid,.close-grid{grid-template-columns:minmax(0,1fr)}
-  .hero-photo{min-height:0;aspect-ratio:4/5;max-height:400px;order:-1;margin-top:8px}
+  .hero-photo{align-self:start;min-height:0;height:clamp(320px,108vw,430px);width:100%;order:-1;margin-top:8px}
   .insight{grid-template-columns:minmax(0,1fr)}
   .proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .timeline{grid-template-columns:minmax(0,1fr);gap:22px}

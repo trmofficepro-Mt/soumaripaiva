@@ -213,7 +213,7 @@ footer .wrap{display:grid;gap:6px}
 
 @media (max-width:900px){
   .hero-grid,.about,.sales-grid,.vitrine-grid,.case-grid,.contact-grid{grid-template-columns:minmax(0,1fr)}
-  .hero-photo{min-height:0;aspect-ratio:4/5;max-height:400px;order:-1;margin-top:8px}
+  .hero-photo{align-self:start;min-height:0;height:clamp(320px,108vw,430px);width:100%;order:-1;margin-top:8px}
   .hero-photo img{border-radius:180px 180px 0 0}
   .hero-copy{padding-bottom:40px}
   .offers{grid-template-columns:repeat(2,minmax(0,1fr))}
