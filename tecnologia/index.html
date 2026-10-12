@@ -67,7 +67,7 @@ section{padding-block:clamp(56px,9vw,104px)}
 .btn.main{background:var(--hero-btn);color:#fff}
 .btn.line{border-color:#fff;color:#fff}
 .hero-photo{position:relative;align-self:stretch;min-height:420px}
-.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;border-radius:220px 220px 0 0;display:block}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;border-radius:220px 220px 0 0;display:block}
 .motif{position:absolute;left:-80px;right:-80px;top:-34px;bottom:-6px;color:var(--hero-accent);opacity:.4;pointer-events:none;z-index:0}
 .motif svg{width:100%;height:100%;display:block}
 .hero-photo img{z-index:1}
@@ -93,6 +93,12 @@ section{padding-block:clamp(56px,9vw,104px)}
 .spot strong{font-family:var(--display);font-weight:900;font-size:clamp(2rem,5vw,3.2rem);line-height:1;white-space:nowrap}
 .spot p{color:var(--night-muted)}
 .note{color:var(--muted);font-size:.85rem;margin-top:12px}
+
+
+.live-proof{display:grid;grid-template-columns:132px minmax(0,1fr);gap:16px;align-items:center;margin-top:8px;padding-top:16px;border-top:1px solid #4A2A3B}
+.live-proof img{width:132px;height:auto;border-radius:16px;border:2px solid var(--night-muted);display:block}
+.live-proof p{font-size:.92rem}
+.live-proof b{color:#fff}
 
 /* O QUE FUNCIONA */
 .why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(28px,4vw,44px)}
@@ -213,6 +219,7 @@ footer{padding-block:28px;color:var(--muted);font-size:.8rem;line-height:1.6}
 .site-nav a:focus-visible{outline:3px solid #FF5BA8;outline-offset:2px}
 .site-nav .cta{padding:8px 14px;border-radius:999px;background:#E0117A;color:#fff;font-family:"Instrument Sans","Segoe UI",system-ui,sans-serif;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap}
 @media (max-width:640px){.site-nav{position:static}.site-nav .cta{display:none}.site-nav .nav-in{flex-wrap:wrap;justify-content:center;gap:4px;padding-block:10px}.site-nav .nav-brand{width:100%;text-align:center;font-size:.92rem;padding-bottom:4px}.site-nav .links{flex:0 1 auto;flex-wrap:wrap;justify-content:center;overflow:visible;padding-block:0}.site-nav .links a{padding:6px 11px;font-size:.86rem}}
+@media (max-width:560px){.badge{left:auto;right:10px}}
 </style>
 <style>html,body{margin:0}img{max-width:100%}</style>
 </head>
@@ -236,7 +243,7 @@ footer{padding-block:28px;color:var(--muted);font-size:.8rem;line-height:1.6}
       </div>
       <div class="hero-photo">
         <div class="motif" aria-hidden="true"><svg viewBox="0 0 600 640" preserveAspectRatio="xMidYMid meet"><g fill="none" stroke="currentColor"><circle cx="300" cy="330" r="250" stroke-width="3"/><circle cx="300" cy="330" r="285" stroke-width="3" stroke-dasharray="4 12"/><circle cx="300" cy="330" r="318" stroke-width="2"/></g></svg></div>
-        <img src="../foto-tec.jpg" alt="Mari Paiva sorrindo no sofá, em frente à parede rosa do escritório do TikTok">
+        <img src="../foto-evento.jpg" alt="Mari Paiva num evento de eletrônicos do TikTok Shop">
         <div class="badge" aria-label="R$ 767 mil vendidos em tecnologia no TikTok Shop"><span><strong>R$ 767 mil</strong>em tecnologia<br>no TikTok Shop</span></div>
       </div>
     </div>
@@ -288,7 +295,7 @@ footer{padding-block:28px;color:var(--muted);font-size:.8rem;line-height:1.6}
       <h2 class="h2">Isso aqui resolveu meu dia</h2>
       <p class="lead">Antes de fechar, a sua marca já vê o que vai ao ar. Um vídeo de 45 segundos, segundo a segundo.</p>
       <div class="script-grid">
-        <div class="phone" aria-hidden="true"><img class="ph-img" src="../capa.jpg" alt="" style="object-position:50% 45%"><div class="ph-shade"></div><span class="len">0:45</span><p class="cap"><b>Isso aqui resolveu meu dia</b></p><div class="rail" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9.5L4 20V5z"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4.5l7 6.5-7 6.5V14c-6 0-9 1.8-11 5 .8-6 4-10 11-10.8V4.5z"/></svg></span></div><div class="meta"><b>@soumaripaiva</b><span>O problema que eu nem sabia que tinha 🔋</span><div class="pcard"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="6" width="11" height="12" rx="3"/><path d="M9 6l1-3h4l1 3M9 18l1 3h4l1-3M12 9.5V12l1.8 1.2"/></svg></span><span><b>Seu produto aqui</b><small>Toque para ver no carrinho</small></span></div></div></div>
+        <div class="phone" aria-hidden="true"><img class="ph-img" src="../foto-neon.jpg" alt="" style="object-position:50% 40%"><div class="ph-shade"></div><span class="len">0:45</span><p class="cap"><b>Isso aqui resolveu meu dia</b></p><div class="rail" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9.5L4 20V5z"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4.5l7 6.5-7 6.5V14c-6 0-9 1.8-11 5 .8-6 4-10 11-10.8V4.5z"/></svg></span></div><div class="meta"><b>@soumaripaiva</b><span>O problema que eu nem sabia que tinha 🔋</span><div class="pcard"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="6" width="11" height="12" rx="3"/><path d="M9 6l1-3h4l1 3M9 18l1 3h4l1-3M12 9.5V12l1.8 1.2"/></svg></span><span><b>Seu produto aqui</b><small>Toque para ver no carrinho</small></span></div></div></div>
         <div>
           <div class="beats"><div class="beat"><span class="t">0:00–0:03<small>Gancho</small></span><div><b>O produto aparece na mão da Mari</b><q>Isso aqui resolveu um problema que eu nem sabia que tinha.</q><p class="scene">Close no produto, sem vinheta e sem logo. O vídeo já começa no momento.</p></div></div><div class="beat"><span class="t">0:03–0:12<small>Problema</small></span><div><b>A situação real</b><q>Sabe quando o celular morre no meio do dia?</q><p class="scene">Cena rápida do problema acontecendo na rotina dela.</p></div></div><div class="beat"><span class="t">0:12–0:30<small>Demonstração</small></span><div><b>O produto em ação</b><q>Olha como funciona: é só isso.</q><p class="scene">A função principal mostrada no uso real, com close no que importa.</p></div></div><div class="beat"><span class="t">0:30–0:40<small>Prova</small></span><div><b>Depois de uns dias usando</b><q>Tô usando faz uma semana e não largo mais.</q><p class="scene">O detalhe que convence: duração, conforto ou praticidade.</p></div></div><div class="beat"><span class="t">0:40–0:45<small>Fecho</small></span><div><b>Chamada para o carrinho</b><q>Tá no carrinho aqui embaixo.</q><p class="scene">Produto em destaque e o link do TikTok Shop.</p></div></div></div>
           <p class="script-note">Roteiro de referência. A versão final é ajustada com a marca, conforme o produto.</p>
