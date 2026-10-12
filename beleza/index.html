@@ -36,9 +36,9 @@
 :root[data-theme="dark"]{
   --paper:#160A11; --ink:#F8EAF1; --muted:#BFA1B1; --line:#3A2230; --card:#21111A; --pink:#F0218A; --soft:#3A1428; color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05;letter-spacing:-.01em}
-p{margin:0}
+p{margin:0;text-wrap:pretty}
 a{color:inherit}
 .wrap{max-width:1100px;margin:0 auto;padding-inline:20px}
 .num{font-variant-numeric:tabular-nums}
@@ -46,7 +46,7 @@ section{padding-block:clamp(56px,9vw,104px)}
 .chap{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
 .chap b{font-family:var(--display);font-weight:900;font-size:.95rem;color:var(--pink)}
 .chap span{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.h2{font-size:clamp(1.9rem,4.6vw,3.3rem);font-weight:700;max-width:22ch}
+.h2{font-size:clamp(1.9rem,4.6vw,3.3rem);font-weight:700;max-width:30ch}
 .lead{color:var(--muted);font-size:1.1rem;max-width:62ch;margin-top:16px}
 
 /* HERO */
@@ -55,9 +55,9 @@ section{padding-block:clamp(56px,9vw,104px)}
 .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(20px,4vw,48px);align-items:end;padding-top:clamp(30px,5vw,56px)}
 .hero-copy{display:grid;gap:22px;padding-bottom:clamp(40px,6vw,72px);min-width:0}
 .cat-chip{justify-self:start;font-family:var(--mono);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:999px;border:1.5px solid currentColor}
-.pair{font-family:var(--display);font-weight:900;font-size:clamp(2.4rem,6.8vw,5rem);line-height:.94;letter-spacing:-.03em}
+.pair{font-family:var(--display);font-weight:900;font-size:clamp(2.4rem,6.8vw,4.3rem);line-height:.94;letter-spacing:-.03em}
 .pair .x{color:var(--hero-accent)}
-.thesis{font-family:var(--display);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.8rem);line-height:1.2;max-width:24ch}
+.thesis{font-family:var(--display);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.8rem);line-height:1.2;max-width:24ch;text-wrap:balance}
 .thesis b{font-weight:900;color:var(--hero-accent)}
 .hero-note{font-size:1.06rem;max-width:48ch;opacity:.92}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
@@ -72,6 +72,7 @@ section{padding-block:clamp(56px,9vw,104px)}
 .motif svg{width:100%;height:100%;display:block}
 .hero-photo img{z-index:1}
 .badge{z-index:2;position:absolute;left:-18px;top:5%;background:var(--hero-btn);color:#fff;border-radius:999px;width:146px;height:146px;display:grid;place-items:center;text-align:center;font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;line-height:1.3;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.photo-cap{position:absolute;z-index:2;left:14px;bottom:14px;max-width:calc(100% - 28px);background:rgba(27,11,21,.78);color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .badge strong{display:block;font-family:var(--display);font-size:1.25rem;letter-spacing:-.02em;line-height:1.05;white-space:nowrap}
 
 /* PROVA */
@@ -138,13 +139,13 @@ section{padding-block:clamp(56px,9vw,104px)}
 
 .script{position:relative;overflow:hidden}
 .script .wrap{position:relative;z-index:1}
-.script-deco{position:absolute;right:-150px;top:-70px;width:580px;height:620px;color:var(--hot);opacity:.13;pointer-events:none}
+.script-deco{position:absolute;right:-90px;top:-120px;width:380px;height:400px;color:var(--hot);opacity:.13;pointer-events:none}
 .script-deco svg{width:100%;height:100%;display:block}
 .why-card .ic,.idea .iic{width:46px;height:46px;border-radius:13px;background:var(--soft);color:var(--pink);display:grid;place-items:center}
 .why-card .ic svg,.idea .iic svg{width:26px;height:26px}
 .why-card .top-row{display:flex;justify-content:space-between;align-items:center}
-.idea .icol{display:grid;gap:10px;justify-items:start}
-@media (max-width:900px){.script-deco{width:400px;height:440px;right:-170px;top:-40px}.idea .icol{grid-auto-flow:column;align-items:center}}
+.idea .icol{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+@media (max-width:900px){.script-deco{width:400px;height:440px;right:-170px;top:-40px}.idea .icol{flex-direction:row;align-items:center}}
 
 /* COMO FUNCIONA */
 .how-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(22px,4vw,48px);margin-top:clamp(28px,4vw,44px);align-items:start}
@@ -164,7 +165,7 @@ section{padding-block:clamp(56px,9vw,104px)}
 /* CTA */
 .close{background:var(--hero-bg);color:#fff}
 .close-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,4vw,48px);align-items:center}
-.close h2{font-size:clamp(2rem,5.4vw,4rem);font-weight:900;letter-spacing:-.02em}
+.close h2{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:900;letter-spacing:-.02em}
 .close h2 em{font-style:normal;color:var(--hero-accent)}
 .close p{font-size:1.1rem;margin-top:14px;max-width:46ch;opacity:.92}
 .contact-list{display:grid;gap:12px}
@@ -180,7 +181,7 @@ footer{padding-block:28px;color:var(--muted);font-size:.8rem;line-height:1.6}
   .proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .why{grid-template-columns:minmax(0,1fr)}
   .idea{grid-template-columns:minmax(0,1fr)}
-  .phone{max-width:240px;justify-self:center}
+  .phone{max-width:270px;justify-self:center}
 }
 @media (max-width:560px){
   .beat{grid-template-columns:minmax(0,1fr);gap:4px}
@@ -203,8 +204,8 @@ footer{padding-block:28px;color:var(--muted);font-size:.8rem;line-height:1.6}
 .phone .pcard{display:flex;align-items:center;gap:8px;background:#fff;color:#24101C;border-radius:10px;padding:7px 10px 7px 7px;margin-top:4px}
 .phone .pcard .pic{width:32px;height:32px;border-radius:8px;background:#E0117A;color:#fff;display:grid;place-items:center;flex:none}
 .phone .pcard .pic svg{width:20px;height:20px}
-.phone .pcard b{display:block;font-size:.8rem;line-height:1.15}
-.phone .pcard small{display:block;font-size:.68rem;color:#6F5866;line-height:1.2}
+.phone .pcard b{display:block;font-size:.8rem;line-height:1.15;white-space:nowrap}
+.phone .pcard small{display:block;font-size:.68rem;color:#6F5866;line-height:1.2;white-space:nowrap}
 
 /* MENU */
 .site-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:#1B0B15;color:#FCEFF5;border-bottom:1px solid #3A2230}
@@ -244,6 +245,7 @@ footer{padding-block:28px;color:var(--muted);font-size:.8rem;line-height:1.6}
       <div class="hero-photo">
         <div class="motif" aria-hidden="true"><svg viewBox="0 0 600 640" preserveAspectRatio="xMidYMid meet"><g fill="currentColor"><circle cx="70" cy="150" r="38"/><circle cx="540" cy="110" r="24"/><circle cx="566" cy="420" r="44"/><circle cx="44" cy="500" r="28"/><circle cx="300" cy="26" r="14"/><circle cx="500" cy="600" r="18"/><circle cx="120" cy="330" r="10"/></g></svg></div>
         <img src="../foto-cabelo.jpg" alt="Selfie da Mari no carro, sorrindo, com o cabelo longo e brilhante">
+        <span class="photo-cap">Selfie sem filtro</span>
         <div class="badge" aria-label="R$ 174 mil vendidos em beleza no TikTok Shop"><span><strong>R$ 174 mil</strong>em beleza<br>no TikTok Shop</span></div>
       </div>
     </div>
@@ -317,11 +319,11 @@ footer{padding-block:28px;color:var(--muted);font-size:.8rem;line-height:1.6}
         </div>
         <div class="sheet" aria-label="Modelo de relatório">
           <div class="sh"><b>RELATÓRIO DA PARCERIA</b><span>modelo</span></div>
-          <div class="row"><span>Visualizações</span><span class="d"></span><span class="v">TikTok + Instagram</span></div>
-          <div class="row"><span>Pessoas alcançadas</span><span class="d"></span><span class="v">por vídeo</span></div>
+          <div class="row"><span>Visualizações</span><span class="d"></span><span class="v">por vídeo e live</span></div>
+          <div class="row"><span>Pessoas alcançadas</span><span class="d"></span><span class="v">público único</span></div>
           <div class="row"><span>Retenção média</span><span class="d"></span><span class="v">% assistido</span></div>
-          <div class="row"><span>Cliques no link</span><span class="d"></span><span class="v">por produto</span></div>
-          <div class="row"><span>Vendas</span><span class="d"></span><span class="v">quando houver link</span></div>
+          <div class="row"><span>Cliques no link</span><span class="d"></span><span class="v">no carrinho</span></div>
+          <div class="row"><span>Vendas</span><span class="d"></span><span class="v">itens e valor</span></div>
           <div class="row"><span>Comentários de compra</span><span class="d"></span><span class="v">"onde compra?"</span></div>
           <p class="foot">Com prints originais das plataformas.</p>
         </div>
